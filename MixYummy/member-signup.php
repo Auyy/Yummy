@@ -13,10 +13,41 @@ if (isset($_SESSION['member_id'])) {
             html, body { 
                   width: 100%;
                   height: 100%;
-                  background: azure;
+                  background: #FCFCFC;
             }
             * {
                   font-size: 0.93rem;
+            }
+            .text-sig{
+                  color: #BF6C3B;
+                  font-family: roboto;
+                  font-weight: bold;
+            }
+            .box-log{
+                  border: none;
+                  border-bottom: solid 1px;
+                  border-radius: 0;
+            }
+            .box-button{
+                  border-radius: 20px;
+                  background-color: #F18095;
+            }
+            .box-button:hover{
+                  background-color: #D91E41;
+            }
+            .box-big{
+                  width: 500px;
+                  height: 530px;
+                  background-color: #fff;
+                  border-radius: 15px;
+                  border: solid 3px #D91E41;
+            }
+            .box-small{
+                  width: 400px;
+                  height: 200px;
+                  background-color: #fff;
+                  margin: auto;
+                  margin-top: 8%;
             }
       </style>
       <script>
@@ -103,18 +134,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <input type="text" name="Gender" placeholder="เพศ"  class="form-control form-control-sm mb-4" required>
 <input type="date" name="Birthday" placeholder="วันเกิด"  class="form-control form-control-sm mb-4" required>
 <input type="text" name="Allergymix" placeholder="อาหารที่แพ้"  class="form-control form-control-sm mb-4" required> -->
-<h6 class="mb-4 text-center text-info">สมัครสมาชิก</h6>
-<input type="email" name="email" placeholder="อีเมล" class="form-control form-control-sm mb-2" required>
+
+<h6 class="mb-4 text-center text-sig">สมัครสมาชิก</h6>
+<div class="box-big">
+<div class="box-small">
+<input type="email" name="email" placeholder="Email" class="form-control form-control-sm mb-2 box-log" required>
 <div class="input-group input-group-sm">
-      <input type="password" name="password" placeholder="รหัสผ่าน" maxlength="20" class="form-control w-auto" required>
-      <input type="password" name="password2" placeholder="ใส่รหัสผ่านซ้ำ" class="form-control w-auto" required>
+      <input type="password" name="password" placeholder="Password" maxlength="20" class="form-control w-auto box-log" required>
+      <input type="password" name="password2" placeholder="Password confirmation" class="form-control w-auto box-log" required>
 </div>
 <div class="input-group input-group-sm mt-4 mb-2">
-      <input type="text" name="firstname" placeholder="ชื่อ" maxlength="20" class="form-control w-auto" required>
-      <input type="text" name="lastname" placeholder="นามสกุล" class="form-control w-auto" required>
+      <input type="text" name="firstname" placeholder="ชื่อ" maxlength="20" class="form-control w-auto box-log" required>
+      <input type="text" name="lastname" placeholder="นามสกุล" class="form-control w-auto box-log" required>
 </div>
-<textarea name="address" rows="3" class="form-control form-control-sm mb-2" placeholder="ที่อยู่" required></textarea>
-<input type="text" name="phone" placeholder="โทร"  class="form-control form-control-sm mb-4" required>
+<textarea name="address" rows="3" class="form-control form-control-sm mb-2 box-log" placeholder="ที่อยู่" required></textarea>
+<input type="text" name="phone" placeholder="โทร"  class="form-control form-control-sm mb-4 box-log" required>
 <h5>เพศ</h5>
 <div class="custom-control custom-radio">
     <input type="radio" class="custom-control-input" id="radio1" name="Gender" value="หญิง">
@@ -125,11 +159,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <label class="custom-control-label" for="radio2">เพศชาย</label>
 </div>
 <br>
-<input type="date" name="Birthday" placeholder="วันเกิด"  class="form-control form-control-sm mb-4" required>
-<input type="text" name="Allergymix" placeholder="อาหารที่แพ้"  class="form-control form-control-sm mb-4" required> 
+<input type="date" name="Birthday" placeholder="วันเกิด"  class="form-control form-control-sm mb-4 box-log" required>
+<input type="text" name="Allergymix" placeholder="อาหารที่แพ้"  class="form-control form-control-sm mb-4 box-log" required> 
 
-<button type="button" id="ok" class="btn btn-primary btn-sm d-block w-25 mx-auto mt-4">ตกลง</button>
-<br><br><br><br>    
+<button type="button" id="ok" class="btn btn-primary btn-sm d-block w-25 mx-auto mt-4 box-button">ยืนยัน</button>
+<br><br><br><br>  
+</div>
+</div>  
 </form>
 
 <?php require 'footer.php'; ?> 

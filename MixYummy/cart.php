@@ -27,6 +27,27 @@ if (!isset($_SESSION['member_id'])) {
             input[type="number"] {
                   max-width: 50px;
             }
+            .text-h{
+                  text-align: center;
+                  color: #D91E41;
+                  font-weight: bold;
+            }
+            .box-buttona{
+                  border-radius: 15px;
+                  border: #F18095;
+                  background-color: #F18095;
+            }
+            .box-buttona:hover{
+                  background-color: #D91E41;
+            }
+            .box-buttonl{
+                  border-radius: 15px;
+                  border: #F18095;
+                  background-color: #966B6B;
+            }
+            .box-buttonl:hover{
+                  background-color: #592121;
+            }
       </style>
       <script>
       $(function() {
@@ -83,13 +104,13 @@ SQL;
 
 $result = $mysqli->query($sql);
 if ($mysqli->error || $result->num_rows == 0) {
-      echo '<h6 class="text-center text-danger">ไม่มีสินค้าในรถเข็น</h6>';
+      echo '<h6 class="text-center text-danger text-h">ไม่มีสินค้าในรถเข็น</h6>';
       $mysqli->close();
       include 'footer.php';
       exit ('</form></div></body></html>');
 }
 
-echo '<h6 class="text-info mb-4 text-center">รายการสินค้าในรถเข็น</h6>';
+echo '<h6 class="mb-4 text-center text-h">รายการสินค้าในรถเข็น</h6>';
 echo '<div class="container">';
 
 $grand_total = 0;
@@ -107,17 +128,17 @@ while ($p = $result->fetch_object()) {
       $dvr_cost += $p->delivery_cost * $p->quantity;  //ค่าจัดส่งสะสมทุกรายการ
       
       echo '<div class="row py-2">';
-      echo     "<div class=\"col-2 text-right\"><img src=\"$src\" class=\"product\"></div>";
+      echo     "<div class=\"col-2 text-right \"><img src=\"$src\" class=\"product\"></div>";
       echo      '<div class="col-10">';
-      echo           "<h6><a href=\"product-detail.php?id=$p->id\" target=\"_blank\">".$n."</a></h6>";
-      echo          '<div class="d-flex justify-content-between align-items-center">';
+      echo           "<h6><a class=\"text-h\" href=\"product-detail.php?id=$p->id\" target=\"_blank\">".$n."</a></h6>";
+      echo          '<div class="d-flex justify-content-between align-items-center ">';
       echo                '<div class="small">';
       echo                      'ราคา:' .$price.'<br>';
       echo                       "จำนวน: <input type=\"number\" name=\"qty[]\" class=\"\" size=\"3\" maxlength=\"3\" min=\"1\" max=\"$p->remain\" value=\"$p->quantity\">";
       echo                      "<input type=\"hidden\" name=\"pid[]\" value=\"$p->id\">";
       echo                        '<div>';
       echo                           "<a href=# class=\"delete\" data-id=\"$p->id\">";
-      echo                                  '<i class="fas fa-trash"></i>';
+      echo                                  '<i class="fas fa-trash text-h"></i>';
       echo                             '</a>';
       echo                      '</div>';
       echo                '</div>';
@@ -143,7 +164,7 @@ echo'</div>';
 echo'<div class="row py-3">';
 echo     '<div class="col-7 col-md-9 text-center">ถ้าเปลี่ยนแปลงจำนวนสินค้า ให้คลิกปุ่ม <b>คำนวณใหม่</b> เพื่อบันทึกการเปลี่ยนแปลง</div>';
 echo      '<div class="col-5 col-md-3 text-right">';
-echo          '<button type="submit" class="btn btn-primary btn-sm">คำนวณใหม่</button>';
+echo          '<button type="submit" class="btn btn-primary btn-sm box-buttonl">คำนวณใหม่</button>';
 echo      '</div>';
 echo'</div>';
 
@@ -153,8 +174,8 @@ $mysqli->close();
 ?>
     
 <div class="text-center mt-4">
-      <a href="index.php" class="btn btn-sm btn-info mr-2 mr-md-5 px-md-5">&laquo; เลือกสินค้าเพิ่มเติม</a>
-      <a href="#" class="checkout btn btn-sm btn-success px-md-5">สั่งซื้อสินค้า &raquo;</a>
+      <a href="index.php" class="btn btn-sm btn-info mr-2 mr-md-5 px-md-5 box-buttonl">&laquo; เลือกสินค้าเพิ่มเติม</a>
+      <a href="#" class="checkout btn btn-sm btn-success px-md-5 box-buttona">สั่งซื้อสินค้า &raquo;</a>
 </div>
 
 <br><br><br><br>

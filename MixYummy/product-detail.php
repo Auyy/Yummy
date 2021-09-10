@@ -10,6 +10,28 @@
                 max-width: 800px;
                 min-width: 400px;
             }
+            .box-buttona{
+                  border-radius: 15px;
+                  border: #F18095;
+                  background-color: #F18095;
+            }
+            .box-buttona:hover{
+                  background-color: #D91E41;
+            }
+            .box-buttonl{
+                  border-radius: 15px;
+                  border: #F18095;
+                  background-color: #966B6B;
+            }
+            .box-buttonl:hover{
+                  background-color: #592121;
+            }
+            .login{
+                  color: #D91E41;
+                  font-family: roboto;
+                  font-weight: bold;
+                  font-size: 25px;
+            }
       </style>
       <script src="js/unite-gallery/themes/compact/ug-theme-compact.js"></script>
       <script src="js/unite-gallery/js/unitegallery.min.js"></script>
@@ -100,16 +122,16 @@ echo   "<div id=\"unite-gallery\" style=\"display: none\">" .$img_tags. "</div>"
 echo '</div>';
 echo '<div class="col-12 col-md-6 d-flex flex-column justify-content-between">';
 echo  '<div>';
-echo          "<h6 class=\"text-success my-3\">".$p->name."</h6>";
+echo          "<h6 class=\"my-3 login\">".$p->name."</h6>";
 echo            "<p>ราคา:" .$price. "บาท</p>";
 echo            "<p>ปริมาณ:" .$p->quality. "ถ้วย</p>";
 echo            "<p>ส่วนผสมที่อาจจะแพ้:" .$p->allergymix. "</p>";
 echo             $r ;
 echo     '</div>';
 echo     '<div class="mt-2 mt-md-0">';
-echo             "<a href=\"#\" id=\"add-cart\" class=\"btn btn-sm $cart_class mb-2\" data-id=\"$p->id\">";
+echo             "<a href=\"#\" id=\"add-cart\" class=\"btn btn-sm $cart_class mb-2 box-buttona\" data-id=\"$p->id\">";
 echo                  '<i class="fa fa-cart-plus mr-1"></i> หยิบใส่รถเข็น </a><br>' ;
-echo           '<a href="#" id="wishlist" class="btn btn-sm btn-info">';
+echo           '<a href="#" id="wishlist" class="btn btn-sm btn-info box-buttonl">';
 echo                  '<i class="fa fa-heart mr-1"></i> รายการที่ชอบ';
 echo            '</a>';
 echo      '</div>';

@@ -17,19 +17,20 @@
       }
 
        .nav-link { 
-             color: aqua !important; 
+             color: white !important; 
        }
        
        .nav-link:hover { 
-             color: red !important 
+             text-decoration : underline !important ;
        }
        
       li.active .nav-link { 
-            color: magenta !important; 
+            color: white !important; 
+            text-decoration : underline !important ;
       }
 
       a.dropdown-item:hover { 
-            color: red; 
+            color: #D91E41; 
       } 
 
       form *:not(h6) {

@@ -25,6 +25,26 @@ if (!isset($_SESSION['member_id'])) {
                 max-width: 64px;
                 max-height: 64px;
             } 
+
+            .text-h{
+                  color: #D91E41;
+                  font-family: roboto;
+                  font-weight: bold;
+            }
+            .text-d{
+                  color: #F18095;
+                  font-family: roboto;
+                  font-weight: bold;
+            }
+
+            .box-button{
+                  border-radius: 20px;
+                  border:  #000;
+                  background-color: #F18095;
+            }
+            .box-button:hover{
+                  background-color: #D91E41;
+            }
             
             div.row {
                   border-bottom: solid 1px darkgray;
@@ -43,7 +63,7 @@ if (!isset($_SESSION['member_id'])) {
 <body class="d-flex pt-5">
     
 <div id = "main-container" class="mt-5 m-auto p-3">
-<h6 class="text-success text-center" style="font-size: 1.5rem">Simple Store</h6>
+<h6 class="text-center text-h" style="font-size: 1.5rem">Mix Yummy</h6>
 <hr>
 <?php      
 $mid = $_SESSION['member_id'];
@@ -84,15 +104,13 @@ $mysqli->query($sql);
 $mysqli->close();       
 ?>
 
-<h6 class="text-info text-center my-4">การสั่งซื้อเสร็จเรียบร้อย</h6>
+<h6 class="text-center my-4 text-d">การสั่งซื้อเสร็จเรียบร้อย</h6>
 <p class="">
-      การตรวจสอบข้อมูลต่างๆ เกี่ยวกับการสั่งซื้อสินค้าของท่าน 
-      เช่น แจ้งโอนเงิน, สถานะการโอนเงิน หรือการจัดส่ง 
-      โดยล็อกอินเข้าสู่ระบบแล้วเลือกที่เมนู "ประวัติการสั่งซื้อและแจ้งชำระเงิน"
+     การสั่งซื้อสำเร็จ ได้ทำการส่งรายการสินค้าให้กับผู้ขายเรียบร้อย
 </p>
 <div class="mt-4 mb-3 text-center">ขอขอบพระคุณที่สั่งซื้อสินค้าจากเรา</div>
 <div class="text-center mt-4">
-      <a href="index.php" class="btn btn-primary btn-sm px-4">กลับไป Shopping ต่อ</a>
+      <a href="index.php" class="btn btn-primary btn-sm px-4 box-button">กลับไป Shopping ต่อ</a>
 </div>
 
 <br><br><br><br>

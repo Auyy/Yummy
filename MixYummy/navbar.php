@@ -11,6 +11,21 @@ function is_active(...$file) {
       return '';
 }
 ?>
+      <style>
+      .text-pinkred {
+            color: #D91E41;
+            border-radius: 50px;
+            background-color: #fff;
+            }   
+      .box-buttonn{
+                  border-radius: 15px;
+                  border: #F18095;
+                  background-color: #F18095;
+            }
+      .box-buttonn:hover{
+                  background-color: #D91E41;
+            }
+      </style>
 <!--  navbar ของ bootstrap โดยให้ขยายออกในหน้าจอขนาด lg
          และซ่อนในหน้าจอเล็กว่า lg (เปิดแสดงโดยคลิกที่ไอคอน hamburger)  -->
 <nav class="navbar navbar-expand-lg fixed-top py-0 pr-2 justify-content-start" style="background-color: #D91E41;">
@@ -19,8 +34,8 @@ function is_active(...$file) {
       </button>    
        
       <div class="navbar-brand text-white">
-            <i class="fa fa-shopping-bag fa-1x mr-2 d-none d-lg-inline"></i>
-            <a href="index.php" style="text-decoration: none"><span class="navbar-brand text-white">Mix.Yummy</span></a>
+            <!-- <i class="fa-1x mr-2 d-none d-lg-inline"> <img src="product-images/logo2.png" width="35" height="35"></i> -->
+            <a href="index.php" style="text-decoration: none"><img src="product-images/logo2.png" width="35" height="35"></a>
       </div>
     
       <div class="collapse navbar-collapse" id="navbarToggler">
@@ -42,7 +57,7 @@ function is_active(...$file) {
 
              
             echo'<div class="dropdown d-inline">';
-            echo     "<a href=# class=\"btn btn-sm btn-info dropdown-toggle\" data-toggle=\"dropdown\" style=\"max-width: 160px\">".$name."</a>";
+            echo     "<a href=# class=\"btn btn-info dropdown-toggle box-buttonn\" data-toggle=\"dropdown\" style=\"max-width: 160px\">".$name."</a>";
             echo    '<div class="dropdown-menu mt-2 bg-light" style="max-width: 300px">';
             echo          '<a class="dropdown-item w-auto" href="cart.php">ตรวจสอบรถเข็นและสั่งซื้อ</a>';
             echo          '<a class="dropdown-item w-auto" href="member-order-list.php">ประวัติการสั่งซื้อและแจ้งชำระเงิน</a>';
@@ -71,7 +86,7 @@ function is_active(...$file) {
             </div>
       </form> -->
 
-      <a href="cart.php" class="btn bg-primary btn-sm text-white my-2">
+      <a href="cart.php" class=" btn-sm text-pinkred my-2">
             <i class="fas fa-lg fa-shopping-cart"></i>
             <span class="badge badge-pill badge-danger"></span>
       </a>

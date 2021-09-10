@@ -13,6 +13,37 @@
                   min-width: 270px;
                   max-width: 350px;
             }
+            .login{
+                  color: #D91E41;
+                  font-family: roboto;
+                  font-weight: bold;
+            }
+            .box-log{
+                  border: none;
+                  border-bottom: solid 1px;
+                  border-radius: 0;
+            }
+            .box-button{
+                  border-radius: 20px;
+                  background-color: #592121;
+            }
+            .box-button:hover{
+                  background-color: #D91E41;
+            }
+            .box-big{
+                  width: 320px;
+                  height: 300px;
+                  background-color: #fff;
+                  border-radius: 15px;
+                  border: solid 3px #D91E41;
+            }
+            .box-small{
+                  width: 250px;
+                  height: 200px;
+                  background-color: #fff;
+                  margin: auto;
+                  margin-top: 8%;
+            }
       </style>
 </head>
 <body class="d-flex pt-5">
@@ -59,7 +90,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_SESSION['member_id'] = $data->id;
             $_SESSION['member_name'] = $data->firstname;
             $mysqli->close();
-            echo "<script>location='member-signin.php'</script>";
+            echo "<script>location='index.php'</script>";
             exit();
       } else if ($num_rows == 0) {
              echo '
@@ -71,11 +102,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       }           
 }
 ?>
-<h6 class="mb-3 text-center text-info">สมาชิกเข้าสู่ระบบ</h6>
-<input type="email" name="email" placeholder="อีเมล" class="form-control form-control-sm mb-3" required>
-<input type="password" name="password" placeholder="รหัสผ่าน"  class="form-control form-control-sm mb-4" required>   
-<button type="submit" class="btn btn-sm btn-primary d-block mx-auto mb-4 w-50">เข้าสู่ระบบ</button>
-<a href="member-signup.php" class="btn btn-sm btn-info d-block mx-auto w-50">สมัครสมาชิก</a>
+<div class="box-big">
+<div class="box-small">
+<h6 class="mb-3 login">เข้าสู่ระบบ</h6>
+<input type="email" name="email" placeholder="Email" class="form-control form-control-sm mb-3 box-log" required>
+<input type="password" name="password" placeholder="Password"  class="form-control form-control-sm mb-4 box-log" required>   
+<button type="submit" class="btn btn-sm btn-primary d-block mx-auto mb-4 w-50 box-button">เข้าสู่ระบบ</button>
+<a href="member-signup.php" class="btn btn-sm d-block mx-auto w-50">สมัครสมาชิก</a>
+</div>
+</div>
 </form>
     
 <?php require 'footer.php'; ?> 

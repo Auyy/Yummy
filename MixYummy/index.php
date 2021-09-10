@@ -23,6 +23,27 @@
                   background: #eee;
                   margin-top: 30px;
             }
+            .text-h{
+                  text-align: center;
+                  color: #D91E41;
+                  font-weight: bold;
+            }
+            .text-n{
+                  color: #D91E41;
+                  font-weight: bold;
+            }
+            .box-buttonn{
+                  border-radius: 15px;
+                  border: #F18095;
+                  background-color: #F18095;
+            }
+            .box-buttonn:hover{
+                  background-color: #D91E41;
+            }
+            .box-img{
+                  width: 100px;
+                  height: 100px;
+            }
       </style>
       <script>
       $(function() {
@@ -35,7 +56,7 @@
     
 <br><br>
 <!-- หัวข้อ -->
-<div align ="center"><h1>รายการสินค้า</h1></div> 
+<div class="text-h"><a>รายการสินค้า</a></div> 
 
 <div id="main-container" class="mx-auto">
 <div class="card-deck mx-4 mt-5 justify-content-center">
@@ -59,13 +80,13 @@ while ($p = $result->fetch_object()) {
      
       echo 
       '<div class="card border border-info pt-2 shadow mb-3">';
-      echo "<img class=\"card-img-top d-block mt-1 mx-auto\" src=\"$src\">";
+      echo "<img class=\"card-img-top d-block mt-1 mx-auto box-img\" src=\"$src\">";
       echo '<div class="card-body d-flex flex-column justify-content-between">';
-      echo    "<h6 class=\"card-title text-success\">" .$n. "</h6>";
+      echo    "<h6 class=\"card-title text-n\">" .$n. "</h6>";
       echo          '<div class="d-flex justify-content-between mt-2">';
       echo                "<span class=\"mt-2\">฿" .$prc. "</span>";
-      echo                "<a class=\"btn btn-info btn-sm p-1\" href=\"product-detail.php?id=$p->id\">";
-      echo                      '<i class="fa fa-search-plus"></i></a>';
+      echo                "<a class=\"btn btn-info btn-sm p-1 box-buttonn\" href=\"product-detail.php?id=$p->id\">";
+      echo                      '<i class="fas fa-shopping-cart"></i></a>';
       echo          '</div>';
       echo      '</div>';
       echo '</div>';  

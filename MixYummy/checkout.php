@@ -16,12 +16,38 @@ if (!isset($_SESSION['member_id'])) {
             html, body { 
                   width: 100%;
                   height: 100%;
-                  background: azure;
+                  background: #FCFCFC;
             }
 
             #main-form {
                   min-width: 400px;
 
+            }
+            .text-h{
+                  color: #D91E41;
+                  font-family: roboto;
+                  font-weight: bold;
+            }
+            .text-d{
+                  color: #F18095;
+                  font-family: roboto;
+                  font-weight: bold;
+            }
+            .box-buttonr{
+                  border-radius: 20px;
+                  border:  #000;
+                  background-color: #D91E41;
+            }
+            .box-buttonr:hover{
+                  background-color: #F18095;
+            }
+            .box-buttonl{
+                  border-radius: 20px;
+                  border:  #000;
+                  background-color: #592121;
+            }
+            .box-buttonl:hover{
+                  background-color: #966B6B;
             }
       </style>
       <script>
@@ -37,11 +63,11 @@ if (!isset($_SESSION['member_id'])) {
 <body class="d-flex pt-5 px-3">  
     
 <form method="post" id="main-form" action="place-order.php" class="m-auto">
-<h6 class="text-success text-center" style="font-size: 1.5rem">Simple Store</h6>
+<h6 class="text-center text-h" style="font-size: 1.5rem">Mix Yummy</h6>
 <hr>
-<h6 class="mb-5 text-center text-info">วิธีชำระเงินและที่อยู่ในการจัดส่งสินค้า</h6>
+<h6 class="mb-5 text-center text-d">วิธีชำระเงินและที่อยู่ในการจัดส่งสินค้า</h6>
 
-<span class="mt-4 mb-2 d-block text-success">วิธีการชำระเงิน</span>
+<span class="mt-4 mb-2 d-block text-h">วิธีการชำระเงิน</span>
 <div class="custom-control custom-radio">
       <input type="radio" class="custom-control-input" 
             id="radio1" name="payment" value="cod" checked>
@@ -61,7 +87,7 @@ $sql = "SELECT * FROM member WHERE id = $mid";
 $result = $mysqli->query($sql);
 $m = $result->fetch_object();
 ?>
-<span class="mt-4 mb-3 d-block text-success">ที่อยู่ในการจัดส่งสินค้า (อาจใช้ข้อมูลเดิม หรือแก้ไขใหม่)</span>
+<span class="mt-4 mb-3 d-block text-h">ที่อยู่ในการจัดส่งสินค้า (อาจใช้ข้อมูลเดิม หรือแก้ไขใหม่)</span>
 <div class="input-group input-group-sm mb-2">
     <input type="text" name="firstname" placeholder="ชื่อ" class="form-control w-auto" value="<?= $m->firstname ?>" required>
       <input type="text" name="lastname" placeholder="นามสกุล" class="form-control w-auto" value="<?= $m->lastname ?>" required>
@@ -70,8 +96,8 @@ $m = $result->fetch_object();
 <input type="text" name="phone" placeholder="โทร"  class="form-control form-control-sm" value="<?= $m->phone ?>" required>
 
 <div class="text-center mt-4">
-      <a href="index.php" class="btn btn-danger btn-sm px-4 mr-5">ยกเลิก</a>
-      <button type="button" class="placeorder btn btn-primary btn-sm px-4">สั่งซื้อสินค้า</button>
+      <a href="index.php" class="btn btn-danger btn-sm px-4 mr-5 box-buttonl">ยกเลิก</a>
+      <button type="button" class="placeorder btn btn-primary btn-sm px-4 box-buttonr">สั่งซื้อสินค้า</button>
 </div>
 <br><br><br><br>
 </form>
